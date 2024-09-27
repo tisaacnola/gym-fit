@@ -4,7 +4,7 @@ export default function ExerciseCard(props) {
   const { exercise, index } = props;
   const [setsCompleted, setSetsComplted] = useState(0);
   function handleSetIncrement() {
-    setSetsComplted((setsCompleted + 1) % 5);
+    setSetsComplted((setsCompleted + 1) % 6);
   }
   return (
     <div className="p-4 rounded-mg flex flex-col gap-4 bg-slate-950 sm:flex-wrap">
@@ -21,7 +21,15 @@ export default function ExerciseCard(props) {
         <h3 className="text-slate-400 text-sm">Muscle Groups</h3>
         <p className="capitalize">{exercise.muscles.join(" & ")}</p>
       </div>
-
+      <div className="flex flex-col bg-slate-950 rounded gap-2 ">
+        {exercise.description.split("___").map((val, i) => {
+          return (
+            <div key={i} className="text-sm">
+              {val}
+            </div>
+          );
+        })}
+      </div>
       <div className="grid grid-cols-2 sm:grid-cols-4 sm:place-items-center gap-2 ">
         {["reps", "rest", "tempo"].map((info) => {
           return (
