@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { SCHEMES, WORKOUTS } from "../utilis/soldiers";
 import SectionWrapper from "./SectionWrapper";
+import Button from "./Button";
 
 function Header(props) {
   const { index, title, description } = props;
@@ -70,7 +71,7 @@ export default function Generator() {
                 setPoison(type);
               }}
               className={
-                "bg-slate-950 border duration-200 hover:border-blue-600 py-3 rounded-lg " +
+                "bg-slate-950 border duration-200 hover:border-blue-600 py-3 rounded-lg px-4 " +
                 (type === poison ? "border-blue-600 " : "border-blue-400 ")
               }
               key={typeIndex}
@@ -134,7 +135,7 @@ export default function Generator() {
                 setGoal(scheme);
               }}
               className={
-                "bg-slate-950 border duration-200 hover:border-blue-600 py-3 rounded-lg " +
+                "bg-slate-950 border duration-200 hover:border-blue-600 py-3 rounded-lg px-4 " +
                 (scheme === goal ? "border-blue-600 " : "border-blue-400 ")
               }
               key={schemeIndex}
@@ -144,6 +145,7 @@ export default function Generator() {
           );
         })}
       </div>
+      <Button text="Formulate"></Button>
     </SectionWrapper>
   );
 }
