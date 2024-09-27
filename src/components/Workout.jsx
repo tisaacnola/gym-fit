@@ -1,3 +1,5 @@
-export default function Workout() {
-  return <div>Workout</div>;
+export default function Workout(props) {
+  const { workout } = props;
+
+  return <div>{workout}</div>;
 }
